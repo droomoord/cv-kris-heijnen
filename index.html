@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CV</title>
+    <title>CV Kris Heijnen</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,32 +23,43 @@
     ></script>
   </head>
   <body>
-    <div class="cv">
-      <img class="picture" src="img/foto.jpg" alt="Kris Heijnen" />
-      <h1>Curriculum Vitae</h1>
-      <div class="box">
-        <h3>Persoonlijke gegevens</h3>
-        <div class="box-items">
-          <li>Naam:</li>
+    <div id="content">
+      <div class="box" id="over-mij">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit possimus
+        illum dolorem facere iure quas culpa consequuntur minus nemo unde esse
+        soluta tempore maiores totam vero, debitis obcaecati atque perspiciatis
+        ipsam magni? Quia qui fugit, temporibus sequi officia ab tempore porro
+        explicabo voluptate, veritatis aliquam accusantium sapiente repellendus,
+        cupiditate exercitationem? Debitis assumenda aspernatur, error minima
+        consectetur ratione iste ad molestiae quis, at minus ipsa eius a, vitae
+        explicabo velit perferendis tenetur! Minus harum, incidunt et vitae
+        dolore iure ullam laudantium.
+      </div>
+      <div class="box" id="picture">
+        <img src="img/foto.jpg" alt="Kris Heijnen" />
+      </div>
+      <div class="box" id="persoonlijk">
+        <h3><i class="far fa-minus-square"></i>Persoonlijk</h3>
+        <div class="grid column-2 odd-bold">
+          <li><i class="fas fa-user"></i> Naam:</li>
           <li>Kristian Heijnen</li>
-          <li>Straat:</li>
+          <li><i class="fas fa-home"></i> Adres:</li>
           <li>Nobeldwarsstraat 19</li>
-          <li>Postcode en plaats</li>
+          <li></li>
           <li>3512EW Utrecht</li>
-          <li>Geboortedatum:</li>
+          <li><i class="far fa-calendar-alt"></i> Geboortedatum</li>
           <li>14-02-1986</li>
-          <li>Rijbewijs:</li>
+          <li><i class="fas fa-car"></i> Rijbewijs</li>
           <li>B</li>
-          <li>Telefoonnummer:</li>
+          <li><i class="fas fa-phone"></i> Telefoon</li>
           <li>0682121281</li>
-          <li>Emailadres:</li>
+          <li><i class="far fa-envelope"></i> Email</li>
           <li>heijnenkris@gmail.com</li>
         </div>
       </div>
-
-      <div class="box">
-        <h3>Werkervaring</h3>
-        <div class="box-items">
+      <div class="box" id="werkervaring">
+        <h3><i class="far fa-minus-square"></i>Werkervaring</h3>
+        <div class="grid column-2 odd-bold">
           <li>2004 tot nu</li>
           <li>
             Begeleidende muzikant (freelancer) bij verschillende artiesten.
@@ -52,18 +67,16 @@
           <li>2019-2020</li>
           <li>Front office medewerker bij Utrecht City Concepts</li>
           <li>2018-2019</li>
-          <li>
-            Management & receptie bij Stone Hostel, Utrecht
-          </li>
+          <li>Management & receptie bij Stone Hostel, Utrecht</li>
           <li>2015-2017</li>
           <li>Stayokay Texel</li>
           <li>2014-2015</li>
           <li>Muziekleraar bij Muziekles Amsterdam.</li>
         </div>
       </div>
-      <div class="box">
-        <h3>Opleiding</h3>
-        <div class="box-items">
+      <div class="box" id="opleiding">
+        <h3><i class="far fa-minus-square"></i>Opleiding</h3>
+        <div class="grid column-2 odd-bold">
           <li>2010 – 2011</li>
           <li>Jazzopleiding Djam te Amsterdam</li>
           <li>2007</li>
@@ -72,9 +85,9 @@
           <li>Vooropleiding conservatorium</li>
         </div>
       </div>
-      <div class="box">
-        <h3>Cursussen</h3>
-        <div class="box-items">
+      <div class="box" id="cursussen">
+        <h3><i class="far fa-minus-square"></i>Cursussen</h3>
+        <div class="grid column-3 gap">
           <h4>Naam cursus</h4>
           <h4>Wanneer</h4>
           <h4>Inhoud</h4>
@@ -100,9 +113,7 @@
             </a>
           </li>
           <li>jan/feb 2020</li>
-          <li>
-            Reactjs, Hooks, Redux, React Routing, Animations, Next.js
-          </li>
+          <li>Reactjs, Hooks, Redux, React Routing, Animations, Next.js</li>
           <li>
             <a
               href="https://www.udemy.com/course/the-web-developer-bootcamp/"
@@ -118,24 +129,54 @@
           </li>
         </div>
       </div>
-      <div class="social">
-        <a
-          href="https://www.facebook.com/kris.heijnen/"
-          target="_blank"
-          class="fab fa-facebook"
-        ></a>
-        <a
-          href="https://github.com/droomoord"
-          target="_blank"
-          class="fab fa-github"
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/kris-heijnen-5710a468/"
-          target="_blank"
-          class="fab fa-linkedin"
-        >
-        </a>
+      <div class="box" id="talen">
+        <h3><i class="far fa-minus-square"></i>Talen en techologieën</h3>
+        <div class="grid column-3">
+          <li><i class="fab fa-js-square"></i>Javascript</li>
+          <li><i class="fab fa-css3-alt"></i>Css</li>
+          <li><i class="fab fa-html5"></i>HTML</li>
+          <li><i class="fab fa-php"></i>PHP</li>
+          <li><i class="fab fa-react"></i>React</li>
+          <li><i class="fab fa-vuejs"></i>Vue</li>
+          <li><i class="fab fa-node-js"></i>NodeJS</li>
+          <li>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 32 32"
+              width="64"
+              height="64"
+            >
+              <path
+                d="M32 24.795c-1.164.296-1.884.013-2.53-.957l-4.594-6.356-.664-.88-5.365 7.257c-.613.873-1.256 1.253-2.4.944l6.87-9.222-6.396-8.33c1.1-.214 1.86-.105 2.535.88l4.765 6.435 4.8-6.4c.615-.873 1.276-1.205 2.38-.883l-2.48 3.288-3.36 4.375c-.4.5-.345.842.023 1.325L32 24.795zM.008 15.427l.562-2.764C2.1 7.193 8.37 4.92 12.694 8.3c2.527 1.988 3.155 4.8 3.03 7.95H1.48c-.214 5.67 3.867 9.092 9.07 7.346 1.825-.613 2.9-2.042 3.438-3.83.273-.896.725-1.036 1.567-.78-.43 2.236-1.4 4.104-3.45 5.273-3.063 1.75-7.435 1.184-9.735-1.248C1 21.6.434 19.812.18 17.9c-.04-.316-.12-.617-.18-.92q.008-.776.008-1.552zm1.498-.38h12.872c-.084-4.1-2.637-7.012-6.126-7.037-3.83-.03-6.58 2.813-6.746 7.037z"
+              />
+            </svg>
+            Express
+          </li>
+          <li><i class="fab fa-npm"></i>NPM</li>
+          <li><i class="fab fa-envira"></i>MongoDB</li>
+          <li><i class="fab fa-bootstrap"></i>Bootstrap</li>
+          <li><i class="fab fa-git-alt"></i>Git</li>
+          <!-- <li><i class="fas fa-search"></i>RegEx</li> -->
+        </div>
       </div>
+    </div>
+    <div class="social">
+      <a
+        href="https://www.facebook.com/kris.heijnen/"
+        target="_blank"
+        class="fab fa-facebook"
+      ></a>
+      <a
+        href="https://github.com/droomoord"
+        target="_blank"
+        class="fab fa-github"
+      ></a>
+      <a
+        href="https://www.linkedin.com/in/kris-heijnen-5710a468/"
+        target="_blank"
+        class="fab fa-linkedin"
+      >
+      </a>
     </div>
     <script src="./script.js"></script>
   </body>

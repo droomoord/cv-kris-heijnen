@@ -1,0 +1,238 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(26, 26, 26);
+}
+
+#content {
+  z-index: 10;
+  display: grid;
+  row-gap: 20px;
+  .box {
+    overflow: hidden;
+    h3 {
+      margin-top: 0;
+      z-index: 10;
+      color: white;
+      background: rgb(166, 175, 255);
+      background: rgb(108, 157, 195);
+      background: linear-gradient(
+        90deg,
+        rgba(108, 157, 195, 1) 3%,
+        rgba(53, 102, 156, 1) 23%,
+        rgba(53, 102, 156, 1) 79%,
+        rgba(108, 157, 195, 1) 100%
+      );
+      padding: 3px;
+      text-align: center;
+      position: relative;
+    }
+    h4 {
+      margin-top: 0;
+    }
+    li {
+      list-style: none;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.fa-minus-square,
+.fa-plus-square {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.hide-text {
+  animation-name: hideText;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  opacity: 1;
+}
+
+.show-text {
+  animation-name: showText;
+  animation-duration: 0.5s;
+  transform: translateY(-500px);
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes hideText {
+  100% {
+    height: 0;
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes showText {
+  to {
+    height: initial;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+#talen {
+  li {
+    i {
+      font-size: 40px;
+    }
+    svg {
+      width: 40px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+}
+.column-2 {
+  grid-template-columns: repeat(2, 50%);
+}
+.column-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.gap {
+  column-gap: 10px;
+}
+
+.social {
+  z-index: 100;
+  font-size: 3em;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+
+  cursor: pointer;
+  a {
+    animation-name: bounceInUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    color: black;
+    text-decoration: none;
+    transform: translate3d(0, 3000px, 0) scaleY(5);
+  }
+  .fa-facebook {
+    animation-delay: 8s;
+    &:hover {
+      color: rgb(46, 77, 134);
+    }
+  }
+
+  .fa-github {
+    animation-delay: 8.2s;
+    &:hover {
+      color: rgb(75, 75, 75);
+    }
+  }
+
+  .fa-linkedin {
+    animation-delay: 8.4s;
+    &:hover {
+      color: rgb(23, 119, 183);
+    }
+  }
+}
+
+.fade-in {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.odd-bold > li:nth-child(odd) {
+  font-weight: bold;
+}
+
+a {
+  color: inherit;
+  text-decoration-style: dotted;
+  &:hover {
+    text-decoration-style: solid;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #content {
+    padding: 15px 0;
+    grid-template-columns: 1fr;
+    .box {
+      .grid {
+        padding: 10px;
+      }
+    }
+    #picture {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) {
+  #content {
+    padding: 10px;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 10px;
+    .box {
+      h3 {
+        padding: 6px;
+      }
+      .box-items {
+        &-grid {
+          column-gap: 20px;
+        }
+      }
+      li {
+        margin-bottom: 3px;
+      }
+    }
+    #picture {
+      order: 1;
+      margin: auto;
+      display: block;
+      img {
+        width: 120px;
+        border-radius: 10%;
+      }
+    }
+    #over-mij {
+      order: 2;
+    }
+    #persoonlijk {
+      order: 3;
+    }
+    #cursussen {
+      order: 4;
+    }
+    #werkervaring {
+      order: 7;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+    #opleiding {
+      order: 5;
+    }
+    #talen {
+      order: 6;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #content {
+    grid-template-columns: 1fr 1.6fr;
+    padding: 40px;
+    column-gap: 20px;
+  }
+}

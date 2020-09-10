@@ -1,138 +1,315 @@
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  color: rgb(26, 26, 26);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  color: #1a1a1a;
 }
 
-.cv {
-  margin: 50px 100px;
-  margin-bottom: 200px;
-  padding: 20px 20px;
-  background-image: url("img/paper.png");
-  background-repeat: repeat;
-  border: 1px solid black;
+#content {
+  z-index: 10;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 20px;
+}
+
+#content .box {
   overflow: hidden;
 }
 
-h1 {
+#content .box h3 {
+  margin-top: 0;
+  z-index: 10;
+  color: white;
+  background: #a6afff;
+  background: #6c9dc3;
+  background: -webkit-gradient(linear, left top, right top, color-stop(3%, #6c9dc3), color-stop(23%, #35669c), color-stop(79%, #35669c), to(#6c9dc3));
+  background: linear-gradient(90deg, #6c9dc3 3%, #35669c 23%, #35669c 79%, #6c9dc3 100%);
+  padding: 3px;
   text-align: center;
+  position: relative;
 }
 
-li {
-  border-left: 1px solid rgb(26, 26, 26);
-  padding-left: 8px;
-  padding-bottom: 5px;
+#content .box h4 {
+  margin-top: 0;
+}
+
+#content .box li {
   list-style: none;
+  padding-bottom: 10px;
 }
 
-.picture {
+.fa-minus-square,
+.fa-plus-square {
   position: absolute;
-  top: 100px;
-  right: 150px;
-  width: 100px;
-  border-radius: 5px;
-  border: 1px solid black;
-  opacity: 0;
-  animation: fadeIn;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
+  left: 5px;
+  top: 5px;
+  font-size: 1.5em;
+  color: white;
+  cursor: pointer;
 }
 
-.box {
-  opacity: 0;
-  padding: 20px;
-  margin-bottom: 20px;
+.hide-text {
+  -webkit-animation-name: hideText;
+          animation-name: hideText;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 1;
 }
 
-.box-items {
+.show-text {
+  -webkit-animation-name: showText;
+          animation-name: showText;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-transform: translateY(-500px);
+          transform: translateY(-500px);
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes hideText {
+  100% {
+    height: 0;
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+@keyframes hideText {
+  100% {
+    height: 0;
+    -webkit-transform: translateY(-500px);
+            transform: translateY(-500px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes showText {
+  to {
+    height: initial;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes showText {
+  to {
+    height: initial;
+    -webkit-transform: none;
+            transform: none;
+    opacity: 1;
+  }
+}
+
+#talen li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#talen li i {
+  font-size: 40px;
+}
+
+#talen li svg {
+  width: 40px;
+}
+
+.grid {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 3fr;
 }
 
-.box:nth-of-type(4) .box-items {
-  grid-template-columns: repeat(3, 1fr);
+.column-2 {
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
 }
 
-h4 {
-  padding-left: 8px;
+.column-3 {
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 
-.box:nth-of-type(4) li {
-  padding: 4px 8px;
-  border-left: none;
+.gap {
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+}
+
+.social {
+  z-index: 100;
+  font-size: 3em;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.social a {
+  -webkit-animation-name: bounceInUp;
+          animation-name: bounceInUp;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  color: black;
+  text-decoration: none;
+  -webkit-transform: translate3d(0, 3000px, 0) scaleY(5);
+          transform: translate3d(0, 3000px, 0) scaleY(5);
+}
+
+.social .fa-facebook {
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+.social .fa-facebook:hover {
+  color: #2e4d86;
+}
+
+.social .fa-github {
+  -webkit-animation-delay: 8.2s;
+          animation-delay: 8.2s;
+}
+
+.social .fa-github:hover {
+  color: #4b4b4b;
+}
+
+.social .fa-linkedin {
+  -webkit-animation-delay: 8.4s;
+          animation-delay: 8.4s;
+}
+
+.social .fa-linkedin:hover {
+  color: #1777b7;
+}
+
+.fade-in {
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.odd-bold > li:nth-child(odd) {
+  font-weight: bold;
 }
 
 a {
   color: inherit;
-  text-decoration-style: dotted;
+  -webkit-text-decoration-style: dotted;
+          text-decoration-style: dotted;
 }
 
 a:hover {
-  text-decoration-style: solid;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
 }
 
-.slide-in {
-  animation-name: fadeInUp;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
-.social {
-  font-size: 3em;
-  float: right;
-  padding-right: 30px;
-  cursor: pointer;
-}
-
-.social > * {
-  text-decoration: none;
-}
-
-.social > *:hover {
-  animation-name: rubberBand;
-  animation-duration: 1s;
-}
-
-.fa-facebook:hover {
-  color: rgb(46, 77, 134);
-}
-
-.fa-linkedin:hover {
-  color: rgb(23, 119, 183);
-}
-
-@media (max-width: 890px) {
-  .box {
-    opacity: 1;
+@media screen and (max-width: 600px) {
+  #content {
+    padding: 15px 0;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
-  .slide-in {
-    animation-name: none;
+  #content .box .grid {
+    padding: 10px;
   }
-  .cv {
-    margin: 0;
-    width: 100%;
-  }
-  .picture {
-    top: 50px;
-    right: 50px;
-  }
-  h1 {
-    text-align: left;
-  }
-}
-
-@media (max-width: 500px) {
-  .box {
-    padding: 0;
-  }
-  .cv {
-    padding: 5px;
-  }
-  .picture {
+  #content #picture {
     display: none;
   }
 }
+
+@media screen and (min-width: 601px) {
+  #content {
+    padding: 10px;
+    -ms-grid-columns: (50%)[2];
+        grid-template-columns: repeat(2, 50%);
+    -webkit-column-gap: 10px;
+            column-gap: 10px;
+  }
+  #content .box h3 {
+    padding: 6px;
+  }
+  #content .box .box-items-grid {
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+  #content .box li {
+    margin-bottom: 3px;
+  }
+  #content #picture {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    margin: auto;
+    display: block;
+  }
+  #content #picture img {
+    width: 120px;
+    border-radius: 10%;
+  }
+  #content #over-mij {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  #content #persoonlijk {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  #content #cursussen {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  #content #werkervaring {
+    -webkit-box-ordinal-group: 8;
+        -ms-flex-order: 7;
+            order: 7;
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  #content #opleiding {
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  #content #talen {
+    -webkit-box-ordinal-group: 7;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #content {
+    -ms-grid-columns: 1fr 1.6fr;
+        grid-template-columns: 1fr 1.6fr;
+    padding: 40px;
+    -webkit-column-gap: 20px;
+            column-gap: 20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
