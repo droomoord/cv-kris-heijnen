@@ -11,7 +11,7 @@ body {
   z-index: 10;
   display: -ms-grid;
   display: grid;
-  row-gap: 20px;
+  row-gap: 30px;
 }
 
 #content .box {
@@ -231,6 +231,9 @@ a:hover {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  #content .box h3 {
+    height: 30px;
+  }
   #content .box .grid {
     padding: 10px;
   }
@@ -263,6 +266,7 @@ a:hover {
             order: 1;
     margin: auto;
     display: block;
+    position: relative;
   }
   #content #picture img {
     width: 120px;

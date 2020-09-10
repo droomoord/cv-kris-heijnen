@@ -9,7 +9,7 @@ body {
 #content {
   z-index: 10;
   display: grid;
-  row-gap: 20px;
+  row-gap: 30px;
   .box {
     overflow: hidden;
     h3 {
@@ -169,6 +169,9 @@ a {
     padding: 15px 0;
     grid-template-columns: 1fr;
     .box {
+      h3 {
+        height: 30px;
+      }
       .grid {
         padding: 10px;
       }
@@ -201,6 +204,7 @@ a {
       order: 1;
       margin: auto;
       display: block;
+      position: relative;
       img {
         width: 120px;
         border-radius: 10%;
