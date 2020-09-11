@@ -8,6 +8,7 @@ body {
 
 #content {
   z-index: 10;
+  margin-bottom: 50px;
   display: grid;
   row-gap: 30px;
   .box {
@@ -36,6 +37,39 @@ body {
       list-style: none;
       padding-bottom: 10px;
     }
+  }
+}
+
+.print {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2em;
+  background-color: black;
+  color: white;
+  padding: 5px 9px;
+  z-index: 100;
+  border-radius: 5px;
+  cursor: pointer;
+  animation-name: rubberBand;
+  animation-duration: 0.5s;
+  animation-iteration-count: 2;
+  animation-delay: 8s;
+  &::after {
+    opacity: 0;
+    content: "Print Me!";
+    position: absolute;
+    right: 30px;
+    color: black;
+    font-size: 0.5em;
+    background-color: yellow;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid black;
+    animation: fadeIn 1s 9s, fadeOut 1s 11s;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -95,6 +129,17 @@ body {
   }
 }
 
+#over-mij {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  justify-content: center;
+  p {
+    margin: 0;
+  }
+}
+
 .grid {
   display: grid;
 }
@@ -125,21 +170,20 @@ body {
     transform: translate3d(0, 3000px, 0) scaleY(5);
   }
   .fa-facebook {
-    animation-delay: 8s;
     &:hover {
       color: rgb(46, 77, 134);
     }
   }
 
   .fa-github {
-    animation-delay: 8.2s;
+    animation-delay: 0.2s;
     &:hover {
       color: rgb(75, 75, 75);
     }
   }
 
   .fa-linkedin {
-    animation-delay: 8.4s;
+    animation-delay: 0.4s;
     &:hover {
       color: rgb(23, 119, 183);
     }
@@ -180,6 +224,9 @@ a {
       display: none;
     }
   }
+  .print {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 601px) {
@@ -211,6 +258,7 @@ a {
       }
     }
     #over-mij {
+      align-items: center;
       order: 2;
     }
     #persoonlijk {
@@ -238,5 +286,32 @@ a {
     grid-template-columns: 1fr 1.6fr;
     padding: 40px;
     column-gap: 20px;
+  }
+}
+
+@media print {
+  #picture,
+  .fa-minus-square,
+  .fa-plus-square,
+  .print,
+  .fa-link,
+  .social {
+    display: none !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  h3 {
+    text-align: left !important;
+  }
+  body {
+    padding-top: 20px !important;
+  }
+  #over-mij {
+    border: 1px solid grey;
+    padding: 20px;
+  }
+  #opleiding {
+    margin-bottom: 120px !important;
   }
 }

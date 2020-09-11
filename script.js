@@ -1,11 +1,16 @@
 const toggelTextButtons = document.querySelectorAll(
   ".fa-minus-square, .fa-plus-square"
 );
+const printButton = document.querySelector(".fa-print");
 
 toggelTextButtons.forEach(function (button) {
   button.addEventListener("click", function () {
     toggleRespeciveText(button);
   });
+});
+
+printButton.addEventListener("click", function () {
+  window.print();
 });
 
 function toggleRespeciveText(element) {
@@ -22,22 +27,3 @@ function toggleRespeciveText(element) {
     element.classList.add("fa-minus-square");
   }
 }
-
-// const boxes = document.querySelectorAll(".box");
-
-// let options = {
-//   rootMargin: "200px",
-//   threshold: 1.0,
-// };
-
-// observer = new IntersectionObserver((entries) => {
-//   entries.forEach((entry) => {
-//     if (entry.isIntersecting) {
-//       entry.target.classList.add("fade-in");
-//     }
-//   });
-// }, options);
-
-// boxes.forEach((box) => {
-//   observer.observe(box);
-// });

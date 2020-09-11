@@ -9,6 +9,7 @@ body {
 
 #content {
   z-index: 10;
+  margin-bottom: 50px;
   display: -ms-grid;
   display: grid;
   row-gap: 30px;
@@ -38,6 +39,46 @@ body {
 #content .box li {
   list-style: none;
   padding-bottom: 10px;
+}
+
+.print {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 2em;
+  background-color: black;
+  color: white;
+  padding: 5px 9px;
+  z-index: 100;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-animation-name: rubberBand;
+          animation-name: rubberBand;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-iteration-count: 2;
+          animation-iteration-count: 2;
+  -webkit-animation-delay: 8s;
+          animation-delay: 8s;
+}
+
+.print::after {
+  opacity: 0;
+  content: "Print Me!";
+  position: absolute;
+  right: 30px;
+  color: black;
+  font-size: 0.5em;
+  background-color: yellow;
+  border-radius: 5px;
+  white-space: nowrap;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid black;
+  -webkit-animation: fadeIn 1s 9s, fadeOut 1s 11s;
+          animation: fadeIn 1s 9s, fadeOut 1s 11s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 .fa-minus-square,
@@ -132,6 +173,25 @@ body {
   width: 40px;
 }
 
+#over-mij {
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  line-height: 1.5;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#over-mij p {
+  margin: 0;
+}
+
 .grid {
   display: -ms-grid;
   display: grid;
@@ -174,18 +234,13 @@ body {
           transform: translate3d(0, 3000px, 0) scaleY(5);
 }
 
-.social .fa-facebook {
-  -webkit-animation-delay: 8s;
-          animation-delay: 8s;
-}
-
 .social .fa-facebook:hover {
   color: #2e4d86;
 }
 
 .social .fa-github {
-  -webkit-animation-delay: 8.2s;
-          animation-delay: 8.2s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 
 .social .fa-github:hover {
@@ -193,8 +248,8 @@ body {
 }
 
 .social .fa-linkedin {
-  -webkit-animation-delay: 8.4s;
-          animation-delay: 8.4s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 
 .social .fa-linkedin:hover {
@@ -240,6 +295,9 @@ a:hover {
   #content #picture {
     display: none;
   }
+  .print {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 601px) {
@@ -273,6 +331,9 @@ a:hover {
     border-radius: 10%;
   }
   #content #over-mij {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -314,6 +375,33 @@ a:hover {
     padding: 40px;
     -webkit-column-gap: 20px;
             column-gap: 20px;
+  }
+}
+
+@media print {
+  #picture,
+  .fa-minus-square,
+  .fa-plus-square,
+  .print,
+  .fa-link,
+  .social {
+    display: none !important;
+  }
+  a {
+    text-decoration: none !important;
+  }
+  h3 {
+    text-align: left !important;
+  }
+  body {
+    padding-top: 20px !important;
+  }
+  #over-mij {
+    border: 1px solid grey;
+    padding: 20px;
+  }
+  #opleiding {
+    margin-bottom: 120px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
