@@ -1,7 +1,7 @@
 const toggelTextButtons = document.querySelectorAll(
   ".fa-minus-square, .fa-plus-square"
 );
-const printButton = document.querySelector(".fa-print");
+const printButton = document.querySelector(".print");
 
 toggelTextButtons.forEach(function (button) {
   button.addEventListener("click", function () {

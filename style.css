@@ -42,16 +42,17 @@ body {
 }
 
 .print {
+  cursor: pointer;
   position: fixed;
   bottom: 20px;
   right: 20px;
   font-size: 2em;
   background-color: black;
   color: white;
-  padding: 5px 9px;
+  padding: 9px;
   z-index: 100;
   border-radius: 5px;
-  cursor: pointer;
+  border: none;
   -webkit-animation-name: rubberBand;
           animation-name: rubberBand;
   -webkit-animation-duration: 0.5s;
@@ -63,10 +64,12 @@ body {
 }
 
 .print::after {
-  opacity: 0;
+  -webkit-transform: translateX(300px);
+          transform: translateX(300px);
   content: "Print Me!";
   position: absolute;
   right: 30px;
+  bottom: 10px;
   color: black;
   font-size: 0.5em;
   background-color: yellow;
@@ -75,8 +78,8 @@ body {
   padding: 10px;
   font-weight: bold;
   border: 1px solid black;
-  -webkit-animation: fadeIn 1s 9s, fadeOut 1s 11s;
-          animation: fadeIn 1s 9s, fadeOut 1s 11s;
+  -webkit-animation: slideInRight 1s 9s, fadeOut 2s 11s;
+          animation: slideInRight 1s 9s, fadeOut 2s 11s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
