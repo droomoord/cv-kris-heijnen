@@ -56,6 +56,7 @@ body {
   animation-duration: 0.5s;
   animation-iteration-count: 2;
   animation-delay: 8s;
+  outline: none;
   &::after {
     transform: translateX(300px);
     content: "Print Me!";
@@ -288,32 +289,5 @@ a {
     grid-template-columns: 1fr 1.6fr;
     padding: 40px;
     column-gap: 20px;
-  }
-}
-
-@media print {
-  #picture,
-  .fa-minus-square,
-  .fa-plus-square,
-  .print,
-  .fa-link,
-  .social {
-    display: none !important;
-  }
-  a {
-    text-decoration: none !important;
-  }
-  h3 {
-    text-align: left !important;
-  }
-  body {
-    padding-top: 20px !important;
-  }
-  #over-mij {
-    border: 1px solid grey;
-    padding: 20px;
-  }
-  #opleiding {
-    margin-bottom: 120px !important;
   }
 }

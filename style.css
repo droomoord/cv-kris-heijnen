@@ -61,6 +61,7 @@ body {
           animation-iteration-count: 2;
   -webkit-animation-delay: 8s;
           animation-delay: 8s;
+  outline: none;
 }
 
 .print::after {
@@ -390,6 +391,12 @@ a:hover {
   .social {
     display: none !important;
   }
+  .grid {
+    -webkit-transform: none !important;
+            transform: none !important;
+    opacity: 1 !important;
+    height: initial !important;
+  }
   a {
     text-decoration: none !important;
   }
@@ -402,9 +409,6 @@ a:hover {
   #over-mij {
     border: 1px solid grey;
     padding: 20px;
-  }
-  #opleiding {
-    margin-bottom: 120px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
